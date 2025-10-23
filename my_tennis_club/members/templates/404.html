@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Basic reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the entire page */
+        html, body {
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Main container to center everything */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* The big "404" */
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10rem; /* vh unit makes it scale with viewport height */
+            font-weight: 700;
+            color: #007bff; /* A nice blue color */
+            margin-bottom: 0;
+            line-height: 1;
+            /* Subtle text shadow */
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* The "Ooops!" message (based on your h1) */
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #555;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        /* The "I cannot find..." message (based on your h2) */
+        p {
+            font-size: 1.1rem;
+            color: #777;
+            margin-bottom: 2rem;
+            max-width: 500px; /* Keeps the text from being too wide on large screens */
+        }
+
+        /* A "Go Home" button/link */
+        .home-link {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .home-link:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+
+        /* Make fonts a bit smaller on small screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 8rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>404</h1>
+        <h2>Ooops! Page Not Found.</h2>
+        <p>Sorry, we couldn't find the file you requested. It might have been moved, deleted, or maybe you just mistyped the address.</p>
+        
+        <a href="/" class="home-link">Go Back Home</a>
+    </div>
+
+</body>
+</html>
