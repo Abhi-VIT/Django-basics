@@ -1,12 +1,195 @@
 <!DOCTYPE html>
 <html>
 <body>
+<!-- Including footer.html template -->
+
+
+
+
+
+{% include "mymenu.html" with me="Abhishek" sponsor="Abhishek Enterprises" %}
+
+<h1>Welcome</h1>
+
+<p>This is my webpage</p>
+
+
+
+<!-- Loop through fruits -->
 
 {% for x in fruits %}
   <h1>{{ x }}</h1>
 {% endfor %}
 
+
 <p>In views.py you can see what the fruits variable looks like.</p>
+
+<h1> Hello {{ firstname }}, how are you?</h1>
+
+{% with firstname="Ronaldo" %}
+  <h2> Hello {{ firstname }}, how are you?</h2>
+{% endwith %}
+
+
+<ul> 
+  {% for x in mymembers %}
+    <li> {{ x.firstname }}</li>
+  {% endfor %}
+</ul>
+
+{% if greeting == 1 %}
+  <h1> Good Morning </h1>
+{% elif greeting == 2 %}
+  <h1> Good Afternoon </h1>
+{% else %}
+  <h1> Good Evening </h1>
+{% endif %}
+
+
+{% if 'Banana' in fruits %}
+  <h1> Banana is present </h1>
+{% else %}
+  <h1> Banana is not present </h1>
+{% endif %}
+
+<!-- Alternative way to check for absence -->
+{% if 'Banana' not in fruits %}
+  <h1> Banana is not present </h1>
+{% else %}
+  <h1> Banana is present </h1>
+{% endif %}
+
+
+<!-- Check if two lists are equal -->
+{% if x is y %}
+  <h1> Yes </h1>
+{% else %}
+  <h1> No </h1>
+{% endif %}
+
+<!-- Check if two lists are equal - alternative syntax -->
+{% if x == y %}
+  <h1> Yes </h1>
+{% else %}
+  <h1> No </h1>
+{% endif %}
+
+<!-- Check if two lists are equal - using with to assign variables -->
+{% with var1=x var2=x %}
+  {% if var1 is var2 %}
+    <h1> Yes </h1>
+  {% else %}
+    <h1> No </h1>
+  {% endif %}
+{% endwith %}
+
+<!-- Check if two lists are not equal -->
+{% if x is not y %}
+  <h1> Yes </h1>
+{% else %}
+  <h1> No </h1>
+{% endif %}
+
+<!-- Loop through fruits again -->
+{% for x in fruits %}
+  <h1> {{ x }}</h1>
+{% endfor %}
+
+
+{% for x in cars %}
+  <h1>{{ x.brand }}</h1>
+  <p>{{ x.model }}</p>
+  <p>{{ x.year }}</p>
+{% endfor %} 
+
+<!-- Loop through members and display their details -->
+{% for x in mymembers %}
+  <h1>{{ x.id }}</h1>
+  <p>
+    {{ x.firstname }}
+    {{ x.lastname }}
+  </p>
+{% endfor %}
+
+<!-- Using empty tag in for loop -->
+<ul> 
+  {% for x in emptytestobject %}
+    <li> {{ x.firstname }}</li>
+  {% empty %}
+    <li> No members found </li>
+  {% endfor %}
+</ul>
+
+<!-- Using forloop.counter to display index -->
+<ul>
+  {% for x in fruits %}
+    <li> {{ forloop.counter }}. {{ x }} </li>
+  {% endfor %}
+</ul>
+
+<!-- Using forloop.counter0 to display zero-based index -->
+<ul>
+  {% for x in fruits %}
+    <li> {{ forloop.counter0 }}. {{ x }} </li>
+  {% endfor %}
+</ul>
+
+<!-- Using forloop.revcounter to display reverse index -->
+<ul>
+  {% for x in fruits %}
+    <li> {{ forloop.revcounter }}. {{ x }} </li>
+  {% endfor %}
+</ul>
+
+<!-- Using forloop.revcounter0 to display zero-based reverse index -->
+<ul>
+  {% for x in fruits %}
+    <li> {{ forloop.revcounter0 }}. {{ x }} </li>
+  {% endfor %}
+</ul>
+
+<!-- Using forloop.first to style the first item differently -->
+<ul>
+  {% for x in fruits %}
+    <li
+      {% if forloop.first %}
+        style='background-color:lightblue;' 
+      {% endif %}
+    >{{ x }}</li>
+  {% endfor %}
+</ul>
+
+<!-- Using forloop.last to style the last item differently -->
+<ul>
+  {% for x in fruits %}
+    <li
+      {% if forloop.last %}
+        style='background-color:lightblue;'
+      {% endif %}
+    >{{ x }}</li>
+  {% endfor %}
+</ul> 
+
+# Comments
+<!-- This is a comment in Django template syntax -->
+<!-- Comments can be used to leave notes for yourself or other developers -->
+<!-- They will not be rendered in the final HTML output -->
+<h1> Welcome Everyone </h1>
+{% comment %}
+  <h1>Welcome ladies and gentlemen</h1>
+{% endcomment %}
+
+<!-- Comments with description -->
+<h1>Welcome Everyone</h1>
+{% comment "this was the original welcome message" %}
+    <h1>Welcome ladies and gentlemen</h1>
+{% endcomment %}
+
+<h1> Welcome {# Everyone #}</h1>
+
+<h1> Hello </h1>
+<p> This page contains a footer in a template.</p>
+{% include 'footer.html' %}
 
 </body>
 </html>
