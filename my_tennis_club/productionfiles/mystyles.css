@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimalist Green Theme</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: #4a5568;
+      background: #fafafa;
+      line-height: 1.6;
+    }
+    
+    .topnav {
+      background: #fff;
+      padding: 20px 40px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    
+    .topnav a {
+      text-decoration: none;
+      color: #6b7280;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .topnav a:hover {
+      color: #10b981;
+      text-decoration: none;
+    }
+    
+    .mycard {
+      background: #fff;
+      margin: 60px auto;
+      max-width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      padding: 40px 32px;
+      border: 1px solid #f3f4f6;
+    }
+    
+    .mycard h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 32px;
+      letter-spacing: -0.5px;
+    }
+    
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    li {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 16px 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background: #10b981;
+      transform: scaleY(0);
+      transition: transform 0.2s ease;
+    }
+    
+    li:hover {
+      border-color: #10b981;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    li:hover::before {
+      transform: scaleY(1);
+    }
+    
+    a {
+      color: #10b981;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    a:hover {
+      color: #059669;
+    }
+    
+    .main {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    
+    .main h1 {
+      font-size: 36px;
+      font-weight: 600;
+      color: #111827;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+    
+    .main p {
+      color: #6b7280;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="topnav">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <div class="mycard">
+    <h1>Featured Items</h1>
+    <ul>
+      <li>Dashboard Overview</li>
+      <li>Analytics & Reports</li>
+      <li>User Management</li>
+      <li>Settings & Preferences</li>
+      <li>Help & Documentation</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <h1>Welcome Back</h1>
+    <p>Manage your workspace with ease</p>
+  </div>
+</body>
+</html>
